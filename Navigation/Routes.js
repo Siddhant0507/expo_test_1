@@ -1,21 +1,19 @@
-import {View , Text} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Provider } from 'react-redux';   // error in setting up redux store
-import { store } from './Redux/store';
 
-import FirstScreen from './ScreenComponets/FirstScreen/FirstScreen';
-import LoginScreen from './ScreenComponets/LoginScreen/LoginScreen';
-import SignupScreen from './ScreenComponets/SignupScreen/SignupScreen';
-import HomeScreen from './ScreenComponets/HomeScreen/HomeScreen';
-import PDateAndTime from './ScreenComponets/PDateAndTime/PDateAndTime';
-import DDateAndTime from './ScreenComponets/DDateAndTime/DDateAndTime';
+import FirstScreen from '../ScreenComponets/FirstScreen/FirstScreen';
+import LoginScreen from '../ScreenComponets/LoginScreen/LoginScreen'
+import SignupScreen from '../ScreenComponets/SignupScreen/SignupScreen';
+import HomeScreen from '../ScreenComponets/HomeScreen/HomeScreen';
+import PDateAndTime from '../ScreenComponets/PDateAndTime/PDateAndTime';
+import DDateAndTime from '../ScreenComponets/DDateAndTime/DDateAndTime';
 
 const Stack = createNativeStackNavigator();
 
-export default function App() {
+const Routes = () => {
   return (
-    
     <NavigationContainer>
       <Stack.Navigator initialRouteName='firstScreen'>
        <Stack.Screen name="firstScreen" component={FirstScreen} options={{headerShown:false}}/>
@@ -28,9 +26,7 @@ export default function App() {
     
     </Stack.Navigator>
   </NavigationContainer>
-
-  );
+  )
 }
 
-
-AIzaSyBDQ3EniKl0EeJpFVV21UfMPBpg8A1OHds
+export default Routes
